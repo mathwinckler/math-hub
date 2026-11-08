@@ -13,13 +13,15 @@
 <link rel="stylesheet" href="assets/css/base.css">
 <style>
   body{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
-  main{flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px;padding-bottom:40px}
-  .t.xl{margin-top:4px}
+  body::before{content:"";position:fixed;inset:14px;pointer-events:none;border:1px solid rgba(59,52,46,.08)}
+  main{flex:1;display:flex;flex-direction:column;justify-content:center;gap:20px;padding-bottom:40px}
+  .t.xl{margin-top:3px}
   .corpo{max-width:380px}
-  .acoes{display:grid;gap:10px;margin-top:10px}
-  .botao.claro{background:transparent;color:var(--carvao);box-shadow:inset 0 0 0 1.5px var(--carvao)}
+  .acoes{display:grid;gap:11px;margin-top:11px}
+  .botao.claro{background:transparent;color:var(--carvao);box-shadow:none}
   .botao.claro:hover,.botao.claro:focus-visible{background:var(--carvao);color:var(--osso)}
   footer{padding:22px 0 30px}
+  @media (min-width:760px){main{width:min(100%,760px);padding-left:106px}}
 </style>
 </head>
 <body>

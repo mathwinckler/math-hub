@@ -18,53 +18,57 @@
 <style>
   /* o que é só do hub */
 
-  /* capa: a página .forte do rota (ferrugem), com a foto real */
-  .capa{background:var(--ferrugem);color:var(--osso)}
+  /* capa: ferrugem tátil, sem a grade de papel milimetrado */
+  .capa{background-color:var(--ferrugem);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");background-blend-mode:soft-light;color:var(--osso);position:relative}
   .capa .topo{color:var(--osso);opacity:.8}
-  .capa .miolo{padding:18px 0 46px}
+  .capa .miolo{padding:18px 0 46px;position:relative;z-index:1}
   .foto{
-    width:124px;height:124px;border-radius:50%;object-fit:cover;object-position:50% 35%;
-    box-shadow:0 0 0 5px var(--ferrugem),0 0 0 7px var(--osso);
+    width:144px;height:180px;border-radius:8px;object-fit:cover;object-position:50% 35%;
+    border:1px solid rgba(237,230,220,.42);box-shadow:0 12px 28px rgba(31,26,22,.18);
   }
-  .capa .kick{color:var(--osso);margin-top:30px}
-  .capa .t.xl{margin-top:14px}
+  .capa .kick{color:var(--osso);margin-top:26px}
+  .capa .t.xl{margin-top:12px}
+  .mw{font-family:Archivo,sans-serif;font-stretch:68%;font-weight:800;font-size:19px;letter-spacing:.01em;text-transform:none}
+  .t{text-wrap:balance}
   .capa .t em{color:var(--carvao)}
-  .capa .credencial{margin-top:18px;color:var(--osso);font-size:11.5px;line-height:1.5}
-  .capa .apoio{margin-top:12px;font-size:17px;line-height:1.5;max-width:400px;color:var(--osso)}
+  .capa .credencial{margin-top:18px;color:var(--osso);font-size:10px;line-height:1.55}
+  .capa .apoio{margin-top:14px;font-size:15.5px;line-height:1.55;max-width:430px;color:var(--osso)}
 
   /* seções numeradas */
-  .bloco{padding:46px 0 10px}
+  main.coluna{position:relative}
+  .bloco{padding:42px 0 12px;position:relative}
   .bloco .num{
-    font-family:Archivo,sans-serif;font-stretch:68%;font-weight:800;font-size:64px;line-height:.8;
-    color:var(--ferrugem);margin-bottom:16px;
+    font-family:Archivo,sans-serif;font-stretch:68%;font-weight:800;font-size:48px;line-height:.88;
+    font-variant-numeric:tabular-nums;color:var(--ferrugem);letter-spacing:-.015em;margin-bottom:13px;
   }
-  .bloco .kick{margin-bottom:14px}
-  .bloco .t{margin-bottom:14px}
-  .bloco .corpo{margin-bottom:22px}
-  .bloco + .bloco{border-top:1px solid var(--linha);margin-top:36px}
+  .bloco .kick{margin-bottom:12px}
+  .bloco .t{margin-bottom:13px;max-width:590px}
+  .bloco .corpo{margin-bottom:20px;max-width:610px}
+  .bloco + .bloco{border-top:1px solid var(--borda);margin-top:38px}
   .lista{margin-top:6px}
+  .realce{background:linear-gradient(transparent 48%,rgba(255,138,0,.38) 48%,rgba(255,138,0,.38) 92%,transparent 92%);padding:0 .12em;margin:0 -.04em;border-radius:2px;color:var(--carvao);font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
   /* passagem para o fundo do baú: a temperatura muda de propósito (GL-104 §3.2) */
-  .limiar{height:96px;background:linear-gradient(var(--osso),var(--sepia));margin-top:56px;position:relative}
+  .limiar{height:52px;background:var(--sepia);border-top:1px solid var(--sinal);margin-top:54px;position:relative}
   .limiar::after{
-    content:"";position:absolute;left:50%;bottom:16px;width:8px;height:8px;margin-left:-4px;
+    content:"";position:absolute;left:50%;top:-5px;width:8px;height:8px;margin-left:-4px;
     background:var(--sinal);transform:rotate(45deg);box-shadow:0 0 14px rgba(255,138,0,.45);
   }
-  .bau{background:var(--sepia);color:var(--sepia-texto);padding:40px 0 48px}
+  .bau{background-color:var(--sepia);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.34'/%3E%3C/svg%3E");background-blend-mode:soft-light;color:var(--sepia-texto);padding:42px 0 50px}
   .bau .kick{color:var(--sepia-meta)}
   .bau .kick::before{background:#A0855A}
-  .bau .t{color:var(--sepia-claro);margin:14px 0 18px}
+  .bau .t{color:var(--sepia-claro);margin:13px 0 18px}
   .bau .t em{color:#C9A86F}
   .bau .verso{
-    font-size:16.5px;line-height:1.65;color:#B6A789;font-style:italic;
-    border-left:2px solid #A0855A;padding-left:16px;margin-bottom:18px;
+    font-size:15.5px;line-height:1.65;color:#B6A789;font-style:italic;
+    border-left:1px solid #A0855A;padding-left:15px;margin-bottom:18px;
   }
   .bau .corpo{color:var(--sepia-meta);margin-bottom:24px}
-  .fatos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:26px}
+  .fatos{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
   .fatos div{border-top:1px solid var(--sepia-linha);padding-top:12px}
   .fatos b{
     display:block;font-family:Archivo,sans-serif;font-stretch:68%;font-weight:800;
-    font-size:30px;line-height:1;color:var(--sepia-claro);
+    font-size:27px;line-height:1;color:var(--sepia-claro);letter-spacing:-.015em;
   }
   .fatos span{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--sepia-meta);margin-top:6px;line-height:1.35}
   .bau .lnk{border-color:var(--sepia-linha);color:var(--sepia-texto)}
@@ -72,17 +76,54 @@
   .bau .lnk:hover,.bau .lnk:focus-visible{color:#C9A86F}
   .bau .lnk:hover .seta,.bau .lnk:focus-visible .seta{color:#C9A86F}
 
-  .rodape{background:var(--sepia);border-top:1px solid var(--sepia-linha);padding:22px 0 34px;color:var(--sepia-meta)}
+  .rodape{background:var(--sepia);border-top:1px solid var(--sepia-linha);padding:21px 0 32px;color:var(--sepia-meta)}
   .rodape .coluna{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   .rodape a{text-decoration:none}
   .rodape a:hover{color:#C9A86F}
+  @media (min-width:760px){
+    .capa .coluna{width:min(100%,960px)}
+    .capa .topo{padding-top:25px}
+    .capa .miolo{min-height:405px;padding:40px 0 54px 84px}
+    .foto{width:156px;height:195px}
+    .capa .apoio{font-size:16px}
+    main.coluna{width:min(100%,760px);padding-left:106px;padding-right:54px}
+    .bloco{padding-top:54px}
+    .bloco .num{font-size:54px;margin-left:-1px}
+    .bloco + .bloco{margin-top:44px}
+    .limiar{margin-top:68px}
+    .bau .coluna{width:min(100%,760px);padding-left:106px;padding-right:54px}
+    .rodape .coluna{width:min(100%,880px)}
+  }
+  @media (min-width:960px){
+    .capa .coluna{width:min(calc(100% - 72px),1040px);padding-inline:0}
+    .capa .topo{padding-top:28px}
+    .capa .miolo{display:grid;grid-template-columns:280px minmax(0,1fr);column-gap:66px;align-content:center;min-height:496px;padding:56px 0 64px}
+    .foto{grid-row:1 / span 4;width:280px;height:350px;border-radius:10px}
+    .capa .kick{grid-column:2;align-self:end;margin-top:0}
+    .capa .t.xl{grid-column:2;margin-top:14px;font-size:72px}
+    .capa .credencial{grid-column:2;margin-top:19px}
+    .capa .apoio{grid-column:2;margin-top:17px;font-size:17px;max-width:510px}
+    main.coluna{width:min(calc(100% - 72px),1040px);padding:0}
+    .bloco{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;padding:66px 0 16px}
+    .bloco .num{grid-column:1 / span 2;grid-row:1 / span 7;font-size:54px;margin:2px 0 0}
+    .bloco .kick,.bloco .t,.bloco .corpo,.bloco > .meta,.bloco .botao,.bloco .lista{grid-column:3 / span 8}
+    .bloco .kick{align-self:end}
+    .bloco .t{font-size:48px;max-width:650px}
+    .bloco .corpo{font-size:17px;max-width:650px}
+    .bloco .botao,.bloco .lista{max-width:650px}
+    .bloco + .bloco{margin-top:52px}
+    .limiar{margin-top:70px}
+    .bau .coluna{width:min(calc(100% - 72px),1040px);padding:46px 0 56px 172px}
+    .bau .t,.bau .verso,.bau .corpo,.bau .fatos,.bau .lnk{max-width:650px}
+    .rodape .coluna{width:min(calc(100% - 72px),1040px);padding-inline:0}
+  }
 </style>
 </head>
 <body>
 
 <header class="capa">
   <div class="coluna">
-    <div class="topo"><span>Hub</span><span>São Paulo · 2026</span></div>
+    <div class="topo"><span class="mw">MW</span><span>São Paulo · 2026</span></div>
     <div class="miolo">
       <img class="foto" src="../assets/img/matheus.jpg" alt="Matheus Winckler sorrindo, de óculos e camiseta preta" width="124" height="124">
       <p class="kick">Em rota de reconexão constante</p>
@@ -99,7 +140,7 @@
     <div class="num" aria-hidden="true">01</div>
     <p class="kick">Consultório</p>
     <h2 class="t" id="consultorio">Medicina do esporte para o <em>atleta da vida</em></h2>
-    <p class="corpo">Para quem toca empresa, carreira e família, e quer o esporte de volta na rotina, ou já treina sério e quer performar: corrida, triathlon, <span class="nw" style="white-space:nowrap">jiu-jitsu</span>, crossfit. Eu vivo essa mesma equação.</p>
+    <p class="corpo">Para <span class="realce">quem toca empresa, carreira e família</span>, e quer o esporte de volta na rotina, ou já treina sério e quer performar: corrida, triathlon, <span class="nw" style="white-space:nowrap">jiu-jitsu</span>, crossfit. Eu vivo essa mesma equação.</p>
     <p class="meta" style="color:var(--pedra);margin:-8px 0 22px">Instituto Olimpo · São Paulo · e online</p>
     <a class="botao" href="https://wa.link/qvlc22" target="_blank" rel="noopener">
       <span>Agendar consulta<small>pelo WhatsApp</small></span><span class="seta" aria-hidden="true">→</span>
