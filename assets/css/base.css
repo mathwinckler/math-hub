@@ -1,0 +1,75 @@
+/* base.css — o vocabulário "rota" aplicado à web.
+   Fonte da identidade: mdw-em-rota, producao-de-conteudo/instagram/visual/modos/rota.css
+   (oficial desde 28/10/2026). Este arquivo aplica, não define.
+   Archivo condensada 800 no título · IBM Plex Mono no metadado · sinal laranja como pontuação. */
+
+:root{
+  --carvao:#1F1A16; --osso:#EDE6DC; --suave:#E2D9CB; --ferrugem:#B5502A;
+  --sinal:#FF8A00; --pedra:#8C8279; --texto:#3B342E; --linha:#D6CBBB;
+  /* fundo do baú: a camada histórica, de outra temperatura de propósito */
+  --sepia:#2A2318; --sepia-texto:#D4C5A9; --sepia-claro:#E7DAC0; --sepia-meta:#94876F; --sepia-linha:#3D3426;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  background:var(--osso);color:var(--carvao);
+  font-family:Archivo,system-ui,sans-serif;font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+}
+a{color:inherit}
+img{display:block;max-width:100%}
+
+.coluna{width:100%;max-width:560px;margin:0 auto;padding:0 22px}
+
+/* metadado em mono: topo, kick, rodapé */
+.meta,.kick,.topo{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:12px;font-weight:500;
+  letter-spacing:.08em;text-transform:uppercase;
+}
+.topo{display:flex;justify-content:space-between;gap:12px;padding:22px 0;color:var(--pedra)}
+.kick{display:flex;align-items:center;gap:12px;color:var(--ferrugem)}
+.kick::before{content:"";width:28px;height:5px;background:var(--sinal);flex-shrink:0}
+
+/* título: a condensada firme, em caixa baixa, com a segunda parte em <em> */
+.t{
+  font-family:Archivo,system-ui,sans-serif;font-stretch:68%;font-weight:800;
+  letter-spacing:-.01em;line-height:.95;font-size:clamp(34px,9vw,46px);
+}
+.t em{font-style:normal;color:var(--ferrugem)}
+.t.xl{font-size:clamp(52px,15vw,76px);line-height:.9}
+
+.corpo{color:var(--texto);font-size:16.5px;line-height:1.6}
+.filete{width:28px;height:5px;background:var(--sinal)}
+
+/* botão principal: carvão, vira ferrugem */
+.botao{
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  width:100%;padding:18px 20px;border-radius:4px;
+  background:var(--carvao);color:var(--osso);text-decoration:none;
+  font-family:Archivo,system-ui,sans-serif;font-weight:700;font-size:17px;letter-spacing:.01em;
+  transition:background .2s ease,transform .2s ease;
+}
+.botao small{display:block;font-family:"IBM Plex Mono",monospace;font-weight:400;font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.65;margin-top:3px}
+.botao .seta{font-family:"IBM Plex Mono",monospace;font-weight:500;transition:transform .2s ease}
+.botao:hover,.botao:focus-visible{background:var(--ferrugem)}
+.botao:hover .seta,.botao:focus-visible .seta{transform:translateX(4px)}
+
+/* link de lista: linha fina, seta que anda */
+.lnk{
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:15px 2px;border-top:1px solid var(--linha);text-decoration:none;
+  transition:color .2s ease,padding-left .2s ease;
+}
+.lnk:last-child{border-bottom:1px solid var(--linha)}
+.lnk b{display:block;font-weight:700;font-size:16.5px}
+.lnk span.meta{display:block;color:var(--pedra);margin-top:2px;font-weight:400;font-size:11px}
+.lnk .seta{font-family:"IBM Plex Mono",monospace;color:var(--pedra);transition:transform .2s ease,color .2s ease}
+.lnk:hover,.lnk:focus-visible{color:var(--ferrugem);padding-left:8px}
+.lnk:hover .seta,.lnk:focus-visible .seta{color:var(--ferrugem);transform:translateX(4px)}
+
+a:focus-visible{outline:2px solid var(--sinal);outline-offset:3px}
+
+.handle{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.04em;color:var(--pedra)}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}

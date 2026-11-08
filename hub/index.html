@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Matheus Winckler · Médico do Esporte</title>
+<meta name="description" content="Matheus Winckler, médico do esporte em São Paulo. Agende sua consulta, ouça o Café Exponencial e o MovMente Cast.">
+<meta name="theme-color" content="#B5502A">
+<meta property="og:title" content="Matheus Winckler · Médico do Esporte">
+<meta property="og:description" content="Consulta, podcasts e o fundo do baú.">
+<meta property="og:image" content="https://matheuswinckler.com.br/assets/img/matheus.jpg">
+<meta property="og:url" content="https://matheuswinckler.com.br/hub/">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/base.css">
+<style>
+  /* o que é só do hub */
+
+  /* capa: a página .forte do rota (ferrugem), com a foto real */
+  .capa{background:var(--ferrugem);color:var(--osso)}
+  .capa .topo{color:var(--osso);opacity:.8}
+  .capa .miolo{padding:18px 0 46px}
+  .foto{
+    width:124px;height:124px;border-radius:50%;object-fit:cover;object-position:50% 35%;
+    box-shadow:0 0 0 5px var(--ferrugem),0 0 0 7px var(--osso);
+  }
+  .capa .kick{color:var(--osso);margin-top:30px}
+  .capa .t.xl{margin-top:14px}
+  .capa .t em{color:var(--carvao)}
+  .capa .credencial{margin-top:18px;color:var(--osso);font-size:11.5px;line-height:1.5}
+  .capa .apoio{margin-top:12px;font-size:17px;line-height:1.5;max-width:400px;color:var(--osso)}
+
+  /* seções numeradas */
+  .bloco{padding:46px 0 10px}
+  .bloco .num{
+    font-family:Archivo,sans-serif;font-stretch:68%;font-weight:800;font-size:64px;line-height:.8;
+    color:var(--ferrugem);margin-bottom:16px;
+  }
+  .bloco .kick{margin-bottom:14px}
+  .bloco .t{margin-bottom:14px}
+  .bloco .corpo{margin-bottom:22px}
+  .bloco + .bloco{border-top:1px solid var(--linha);margin-top:36px}
+  .lista{margin-top:6px}
+
+  /* passagem para o fundo do baú: a temperatura muda de propósito (GL-104 §3.2) */
+  .limiar{height:96px;background:linear-gradient(var(--osso),var(--sepia));margin-top:56px;position:relative}
+  .limiar::after{
+    content:"";position:absolute;left:50%;bottom:16px;width:8px;height:8px;margin-left:-4px;
+    background:var(--sinal);transform:rotate(45deg);box-shadow:0 0 14px rgba(255,138,0,.45);
+  }
+  .bau{background:var(--sepia);color:var(--sepia-texto);padding:40px 0 48px}
+  .bau .kick{color:var(--sepia-meta)}
+  .bau .kick::before{background:#A0855A}
+  .bau .t{color:var(--sepia-claro);margin:14px 0 18px}
+  .bau .t em{color:#C9A86F}
+  .bau .verso{
+    font-size:16.5px;line-height:1.65;color:#B6A789;font-style:italic;
+    border-left:2px solid #A0855A;padding-left:16px;margin-bottom:18px;
+  }
+  .bau .corpo{color:var(--sepia-meta);margin-bottom:24px}
+  .fatos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:26px}
+  .fatos div{border-top:1px solid var(--sepia-linha);padding-top:12px}
+  .fatos b{
+    display:block;font-family:Archivo,sans-serif;font-stretch:68%;font-weight:800;
+    font-size:30px;line-height:1;color:var(--sepia-claro);
+  }
+  .fatos span{display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--sepia-meta);margin-top:6px;line-height:1.35}
+  .bau .lnk{border-color:var(--sepia-linha);color:var(--sepia-texto)}
+  .bau .lnk span.meta,.bau .lnk .seta{color:var(--sepia-meta)}
+  .bau .lnk:hover,.bau .lnk:focus-visible{color:#C9A86F}
+  .bau .lnk:hover .seta,.bau .lnk:focus-visible .seta{color:#C9A86F}
+
+  .rodape{background:var(--sepia);border-top:1px solid var(--sepia-linha);padding:22px 0 34px;color:var(--sepia-meta)}
+  .rodape .coluna{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+  .rodape a{text-decoration:none}
+  .rodape a:hover{color:#C9A86F}
+</style>
+</head>
+<body>
+
+<header class="capa">
+  <div class="coluna">
+    <div class="topo"><span>Hub</span><span>São Paulo · 2026</span></div>
+    <div class="miolo">
+      <img class="foto" src="../assets/img/matheus.jpg" alt="Matheus Winckler sorrindo, de óculos e camiseta preta" width="124" height="124">
+      <p class="kick">Em rota de reconexão constante</p>
+      <h1 class="t xl">Matheus<br><em>Winckler</em></h1>
+      <p class="credencial meta">Médico do Esporte<br><span style="white-space:nowrap">CRM-SP 220597 · RQE 128342</span></p>
+      <p class="apoio">Formado pela UNIFESP e cofundador da Exponencial Med, onde ajudo médicos especialistas a construir e gerir o consultório particular.</p>
+    </div>
+  </div>
+</header>
+
+<main class="coluna">
+
+  <section class="bloco" aria-labelledby="consultorio">
+    <div class="num" aria-hidden="true">01</div>
+    <p class="kick">Consultório</p>
+    <h2 class="t" id="consultorio">Medicina do esporte para o <em>atleta da vida</em></h2>
+    <p class="corpo">Para quem toca empresa, carreira e família, e quer o esporte de volta na rotina, ou já treina sério e quer performar: corrida, triathlon, <span class="nw" style="white-space:nowrap">jiu-jitsu</span>, crossfit. Eu vivo essa mesma equação.</p>
+    <p class="meta" style="color:var(--pedra);margin:-8px 0 22px">Instituto Olimpo · São Paulo · e online</p>
+    <a class="botao" href="https://wa.link/qvlc22" target="_blank" rel="noopener">
+      <span>Agendar consulta<small>pelo WhatsApp</small></span><span class="seta" aria-hidden="true">→</span>
+    </a>
+  </section>
+
+  <section class="bloco" aria-labelledby="cafe">
+    <div class="num" aria-hidden="true">02</div>
+    <p class="kick">Podcast · no ar</p>
+    <h2 class="t" id="cafe">Café <em>Exponencial</em></h2>
+    <p class="corpo">Conversas sobre o negócio do médico e o consultório particular, pela Exponencial Med.</p>
+    <div class="lista">
+      <a class="lnk" href="https://open.spotify.com/show/6EVCn0Sw2Yffkcc0lbABpP" target="_blank" rel="noopener">
+        <span><b>Ouvir o Café Exponencial</b><span class="meta">Spotify</span></span><span class="seta" aria-hidden="true">→</span>
+      </a>
+      <a class="lnk" href="https://www.instagram.com/exponencial.med/" target="_blank" rel="noopener">
+        <span><b>@exponencial.med</b><span class="meta">Instagram</span></span><span class="seta" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="bloco" aria-labelledby="movmente">
+    <div class="num" aria-hidden="true">03</div>
+    <p class="kick">Podcast · 2023 a 2025</p>
+    <h2 class="t" id="movmente">MovMente <em>Cast</em></h2>
+    <p class="corpo">Medicina do esporte e performance em conversa, com Victor Brito. Mais de 60 episódios.</p>
+    <div class="lista">
+      <a class="lnk" href="https://open.spotify.com/show/3x1wPup89zliroamyz5HVK" target="_blank" rel="noopener">
+        <span><b>Ouvir o MovMente Cast</b><span class="meta">Spotify</span></span><span class="seta" aria-hidden="true">→</span>
+      </a>
+      <a class="lnk" href="https://www.youtube.com/channel/UC_wvRl1lUMqli-3-9XkGBBQ" target="_blank" rel="noopener">
+        <span><b>Assistir</b><span class="meta">YouTube</span></span><span class="seta" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- 04 · CONVITES E PARCERIAS — liga quando o email existir.
+       Trocar ENDERECO pelo email e tirar este comentário em volta.
+  <section class="bloco" aria-labelledby="convites">
+    <div class="num" aria-hidden="true">04</div>
+    <p class="kick">Convites e parcerias</p>
+    <h2 class="t" id="convites">Podcast, aula, evento <em>ou projeto</em></h2>
+    <p class="corpo">Para convites e propostas formais.</p>
+    <a class="botao" href="mailto:ENDERECO">
+      <span>Escrever<small>ENDERECO</small></span><span class="seta" aria-hidden="true">→</span>
+    </a>
+  </section>
+  -->
+
+</main>
+
+<div class="limiar" aria-hidden="true"></div>
+
+<section class="bau" aria-labelledby="reconec">
+  <div class="coluna">
+    <p class="kick">Fundo do baú</p>
+    <h2 class="t" id="reconec">Reconec<em>.Estado</em></h2>
+    <p class="verso">2017 a 2022. Um jovem com seus 20 e poucos anos em busca de reconexão interior. Em rota para se tornar inteiro.</p>
+    <p class="corpo">Estoicismo, respiração, biohacking, microbiota, longevidade, e a pergunta que ainda não saiu de lugar nenhum: como ser um ser humano completo?</p>
+    <div class="fatos">
+      <div><b>+100</b><span>vídeos</span></div>
+      <div><b>40 mil</b><span>inscritos</span></div>
+      <div><b>+600 mil</b><span>views no vídeo de respiração</span></div>
+    </div>
+    <a class="lnk" href="https://www.youtube.com/channel/UCvEygfShpjmn33it4Pc-fyA" target="_blank" rel="noopener">
+      <span><b>Abrir o baú</b><span class="meta">YouTube</span></span><span class="seta" aria-hidden="true">→</span>
+    </a>
+  </div>
+</section>
+
+<footer class="rodape">
+  <div class="coluna meta">
+    <a href="https://www.instagram.com/drmatheuswinckler/" target="_blank" rel="noopener">@drmatheuswinckler</a>
+    <span>CRM-SP 220597 · RQE 128342</span>
+  </div>
+</footer>
+
+</body>
+</html>
