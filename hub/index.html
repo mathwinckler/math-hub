@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="pt-BR">
+<script>document.documentElement.classList.add("js")</script>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -11,6 +12,8 @@
 <meta property="og:image" content="https://matheuswinckler.com.br/assets/img/matheus.jpg">
 <meta property="og:url" content="https://matheuswinckler.com.br/hub/">
 <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/img/favicon-64.png" type="image/png" sizes="64x64">
+<link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -19,7 +22,8 @@
   /* o que é só do hub */
 
   /* capa: ferrugem tátil, sem a grade de papel milimetrado */
-  .capa{background-color:var(--ferrugem);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");background-blend-mode:soft-light;color:var(--osso);position:relative}
+  .capa{background-color:var(--ferrugem);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180' viewBox='0 0 180 180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E");background-blend-mode:soft-light;color:var(--osso);position:relative;z-index:2;box-shadow:0 22px 44px -30px rgba(31,26,22,.42)}
+  .capa::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,138,0,.5) 50%,transparent)}
   .capa .topo{color:var(--osso);opacity:.8}
   .capa .miolo{padding:18px 0 46px;position:relative;z-index:1}
   .foto{
@@ -44,12 +48,14 @@
   .bloco .kick{margin-bottom:12px}
   .bloco .t{margin-bottom:13px;max-width:590px}
   .bloco .corpo{margin-bottom:20px;max-width:610px}
-  .bloco + .bloco{border-top:1px solid var(--borda);margin-top:38px}
+  .bloco + .bloco{margin-top:38px}
+  .bloco + .bloco::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--linha) 14%,var(--linha) 86%,transparent)}
   .lista{margin-top:6px}
   .realce{background:linear-gradient(transparent 48%,rgba(255,138,0,.38) 48%,rgba(255,138,0,.38) 92%,transparent 92%);padding:0 .12em;margin:0 -.04em;border-radius:2px;color:var(--carvao);font-weight:600;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 
   /* passagem para o fundo do baú: a temperatura muda de propósito (GL-104 §3.2) */
-  .limiar{height:52px;background:var(--sepia);border-top:1px solid var(--sinal);margin-top:54px;position:relative}
+  .limiar{height:34px;background:var(--sepia);border-top:1px solid transparent;border-image:linear-gradient(90deg,transparent,var(--sinal) 28%,var(--sinal) 72%,transparent) 1;margin-top:96px;position:relative}
+  .limiar::before{content:"";position:absolute;left:0;right:0;bottom:100%;height:84px;margin-bottom:1px;pointer-events:none;background:linear-gradient(to bottom,rgba(42,35,24,0),rgba(42,35,24,.07))}
   .limiar::after{
     content:"";position:absolute;left:50%;top:-5px;width:8px;height:8px;margin-left:-4px;
     background:var(--sinal);transform:rotate(45deg);box-shadow:0 0 14px rgba(255,138,0,.45);
@@ -76,7 +82,7 @@
   .bau .lnk:hover,.bau .lnk:focus-visible{color:#C9A86F}
   .bau .lnk:hover .seta,.bau .lnk:focus-visible .seta{color:#C9A86F}
 
-  .rodape{background:var(--sepia);border-top:1px solid var(--sepia-linha);padding:21px 0 32px;color:var(--sepia-meta)}
+  .rodape{background:var(--sepia);border-top:1px solid rgba(148,135,111,.14);padding:21px 0 32px;color:var(--sepia-meta)}
   .rodape .coluna{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   .rodape a{text-decoration:none}
   .rodape a:hover{color:#C9A86F}
@@ -105,7 +111,7 @@
     .bloco{padding-top:54px}
     .bloco .num{font-size:54px;margin-left:-1px}
     .bloco + .bloco{margin-top:44px}
-    .limiar{margin-top:68px}
+    .limiar{margin-top:104px}
     .bau .coluna{width:min(100%,760px);padding-left:106px;padding-right:54px}
     .rodape .coluna{width:min(100%,880px)}
   }
@@ -127,7 +133,7 @@
     .bloco .corpo{font-size:17px;max-width:650px}
     .bloco .botao,.bloco .lista{max-width:650px}
     .bloco + .bloco{margin-top:52px}
-    .limiar{margin-top:70px}
+    .limiar{margin-top:112px}
     .bau .coluna{width:min(calc(100% - 72px),1040px);padding:46px 0 56px 172px}
     .bau .t,.bau .verso,.bau .corpo,.bau .fatos,.bau .lnk{max-width:650px}
     .rodape .coluna{width:min(calc(100% - 72px),1040px);padding-inline:0}
@@ -140,18 +146,18 @@
   <div class="coluna">
     <div class="topo"><span class="mw">MW</span><span>São Paulo · 2026</span></div>
     <div class="miolo">
-      <p class="kick">Em rota de reconexão constante</p>
-      <img class="foto" src="../assets/img/matheus.jpg" alt="Matheus Winckler sorrindo, de óculos e camiseta preta" width="124" height="155">
-      <h1 class="t xl">Matheus<br><em>Winckler</em></h1>
-      <p class="credencial meta">Médico do Esporte<br><span style="white-space:nowrap">CRM-SP 220597 · RQE 128342</span></p>
-      <p class="apoio">Formado pela UNIFESP e cofundador da Exponencial Med, onde ajudo médicos especialistas a construir e gerir o consultório particular.</p>
+      <p class="kick rv">Em rota de reconexão constante</p>
+      <img class="foto rv" style="--d:.06s" src="../assets/img/matheus.jpg" alt="Matheus Winckler sorrindo, de óculos e camiseta preta" width="124" height="155">
+      <h1 class="t xl rv" style="--d:.12s">Matheus<br><em>Winckler</em></h1>
+      <p class="credencial meta rv" style="--d:.2s">Médico do Esporte<br><span style="white-space:nowrap">CRM-SP 220597 · RQE 128342</span></p>
+      <p class="apoio rv" style="--d:.26s">Formado pela UNIFESP e cofundador da Exponencial Med, onde ajudo médicos especialistas a construir e gerir o consultório particular.</p>
     </div>
   </div>
 </header>
 
 <main class="coluna">
 
-  <section class="bloco" aria-labelledby="consultorio">
+  <section class="bloco rv" aria-labelledby="consultorio">
     <div class="num" aria-hidden="true">01</div>
     <p class="kick"><span class="kn">01 · </span>Consultório</p>
     <h2 class="t" id="consultorio">Medicina do esporte para o <em>atleta da vida</em></h2>
@@ -162,7 +168,7 @@
     </a>
   </section>
 
-  <section class="bloco" aria-labelledby="cafe">
+  <section class="bloco rv" aria-labelledby="cafe">
     <div class="num" aria-hidden="true">02</div>
     <p class="kick"><span class="kn">02 · </span>Podcast · no ar</p>
     <h2 class="t" id="cafe">Café <em>Exponencial</em></h2>
@@ -177,7 +183,7 @@
     </div>
   </section>
 
-  <section class="bloco" aria-labelledby="movmente">
+  <section class="bloco rv" aria-labelledby="movmente">
     <div class="num" aria-hidden="true">03</div>
     <p class="kick"><span class="kn">03 · </span>Podcast · 2023 a 2025</p>
     <h2 class="t" id="movmente">MovMente <em>Cast</em></h2>
@@ -194,7 +200,7 @@
 
   <!-- 04 · CONVITES E PARCERIAS — liga quando o email existir.
        Trocar ENDERECO pelo email e tirar este comentário em volta.
-  <section class="bloco" aria-labelledby="convites">
+  <section class="bloco rv" aria-labelledby="convites">
     <div class="num" aria-hidden="true">04</div>
     <p class="kick">Convites e parcerias</p>
     <h2 class="t" id="convites">Podcast, aula, evento <em>ou projeto</em></h2>
@@ -210,7 +216,7 @@
 <div class="limiar" aria-hidden="true"></div>
 
 <section class="bau" aria-labelledby="reconec">
-  <div class="coluna">
+  <div class="coluna rv">
     <p class="kick">Fundo do baú</p>
     <h2 class="t" id="reconec">Reconec<em>.Estado</em></h2>
     <p class="verso">2017 a 2022. Um jovem com seus 20 e poucos anos em busca de reconexão interior. Em rota para se tornar inteiro.</p>
@@ -233,5 +239,12 @@
   </div>
 </footer>
 
+<script>
+(function(){var el=[].slice.call(document.querySelectorAll(".rv"));
+function on(e){e.classList.add("on")}
+if(!("IntersectionObserver" in window)){el.forEach(on);return}
+var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){on(x.target);io.unobserve(x.target)}})},{rootMargin:"0px 0px -8% 0px"});
+el.forEach(function(e){io.observe(e)});setTimeout(function(){el.forEach(on)},3000)})();
+</script>
 </body>
 </html>
