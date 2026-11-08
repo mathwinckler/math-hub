@@ -80,6 +80,21 @@
   .rodape .coluna{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
   .rodape a{text-decoration:none}
   .rodape a:hover{color:#C9A86F}
+  /* celular: capa compacta, a identificação sobe para a primeira tela */
+  .kn{display:none}
+  @media (max-width:759px){
+    .capa .topo{padding:16px 0 10px}
+    .capa .miolo{display:grid;grid-template-columns:104px minmax(0,1fr);column-gap:18px;align-items:end;padding:4px 0 30px}
+    .capa .kick{grid-column:1 / -1;margin:0 0 16px}
+    .foto{grid-column:1;grid-row:2 / span 2;width:104px;height:130px;border-radius:7px;box-shadow:0 8px 20px rgba(31,26,22,.16)}
+    .capa .t.xl{grid-column:2;grid-row:2;margin:0;font-size:clamp(40px,11.6vw,48px);line-height:.9}
+    .capa .credencial{grid-column:2;grid-row:3;margin-top:12px;font-size:9.5px;letter-spacing:.08em}
+    .capa .apoio{grid-column:1 / -1;margin-top:18px;font-size:14.5px;line-height:1.5}
+    .bloco .num{display:none}
+    .kn{display:inline}
+    .bloco{padding-top:30px}
+    .bloco + .bloco{margin-top:30px}
+  }
   @media (min-width:760px){
     .capa .coluna{width:min(100%,960px)}
     .capa .topo{padding-top:25px}
@@ -125,8 +140,8 @@
   <div class="coluna">
     <div class="topo"><span class="mw">MW</span><span>São Paulo · 2026</span></div>
     <div class="miolo">
-      <img class="foto" src="../assets/img/matheus.jpg" alt="Matheus Winckler sorrindo, de óculos e camiseta preta" width="124" height="124">
       <p class="kick">Em rota de reconexão constante</p>
+      <img class="foto" src="../assets/img/matheus.jpg" alt="Matheus Winckler sorrindo, de óculos e camiseta preta" width="124" height="155">
       <h1 class="t xl">Matheus<br><em>Winckler</em></h1>
       <p class="credencial meta">Médico do Esporte<br><span style="white-space:nowrap">CRM-SP 220597 · RQE 128342</span></p>
       <p class="apoio">Formado pela UNIFESP e cofundador da Exponencial Med, onde ajudo médicos especialistas a construir e gerir o consultório particular.</p>
@@ -138,7 +153,7 @@
 
   <section class="bloco" aria-labelledby="consultorio">
     <div class="num" aria-hidden="true">01</div>
-    <p class="kick">Consultório</p>
+    <p class="kick"><span class="kn">01 · </span>Consultório</p>
     <h2 class="t" id="consultorio">Medicina do esporte para o <em>atleta da vida</em></h2>
     <p class="corpo">Para <span class="realce">quem toca empresa, carreira e família</span>, e quer o esporte de volta na rotina, ou já treina sério e quer performar: corrida, triathlon, <span class="nw" style="white-space:nowrap">jiu-jitsu</span>, crossfit. Eu vivo essa mesma equação.</p>
     <p class="meta" style="color:var(--pedra);margin:-8px 0 22px">Instituto Olimpo · São Paulo · e online</p>
@@ -149,7 +164,7 @@
 
   <section class="bloco" aria-labelledby="cafe">
     <div class="num" aria-hidden="true">02</div>
-    <p class="kick">Podcast · no ar</p>
+    <p class="kick"><span class="kn">02 · </span>Podcast · no ar</p>
     <h2 class="t" id="cafe">Café <em>Exponencial</em></h2>
     <p class="corpo">Conversas sobre o negócio do médico e o consultório particular, pela Exponencial Med.</p>
     <div class="lista">
@@ -164,7 +179,7 @@
 
   <section class="bloco" aria-labelledby="movmente">
     <div class="num" aria-hidden="true">03</div>
-    <p class="kick">Podcast · 2023 a 2025</p>
+    <p class="kick"><span class="kn">03 · </span>Podcast · 2023 a 2025</p>
     <h2 class="t" id="movmente">MovMente <em>Cast</em></h2>
     <p class="corpo">Medicina do esporte e performance em conversa, com Victor Brito. Mais de 60 episódios.</p>
     <div class="lista">
